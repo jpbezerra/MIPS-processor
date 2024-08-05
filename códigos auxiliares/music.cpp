@@ -18,6 +18,8 @@ int main() {
         time--;
 
         if (time == 0) {
+            cout << currMusic << " ";
+
             index = changeMusic(index);
             currMusic = musics[index];
             time = 4;
@@ -27,6 +29,8 @@ int main() {
             }
         }
     }
+
+    cout << currMusic;
 
     return 0;
 }
