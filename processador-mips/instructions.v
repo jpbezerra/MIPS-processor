@@ -3,6 +3,9 @@
 `define R_TYPE  6'b000000
 
 `define JUMP    6'b000010
+`define JR      6'b001000
+`define ADDU    6'b100001
+`define SUB     6'b100010
 
 // Instruction I-type
 
