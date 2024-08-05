@@ -17,37 +17,43 @@ module DataMemory_tb;
     );
 
     initial begin
-        // Initialize Inputs
         clk = 0;
         memWrite = 0;
         address = 0;
         writeData = 0;
 
-        // Write data to memory
+        #100;
+
+        // Test case 1: Write and read from address 0
+        address = 0;
+        writeData = 32'hAABBCCDD;
         memWrite = 1;
-        address = 4;
-        writeData = 32'hDEADBEEF;
-        #20;
+        #10;
+        memWrite = 0;
+        #10;
+        $display("Test case 1 - Address: %h, Write Data: %h, Read Data: %h", address, writeData, readData);
 
+        // Test case 2: Write and read from address 4
+        address = 4;
+        writeData = 32'h11223344;
         memWrite = 1;
-        address = 8;
-        writeData = 32'hCAFEBABE;
-        #20;
-
-        // Read data from memory
+        #10;
         memWrite = 0;
-        address = 4;
-        #20;
-        $display("Read data from address %d: %h", address, readData);
+        #10;
+        $display("Test case 2 - Address: %h, Write Data: %h, Read Data: %h", address, writeData, readData);
 
-        memWrite = 0;
+        // Test case 3: Write and read from address 8
         address = 8;
-        #20;
-        $display("Read data from address %d: %h", address, readData);
+        writeData = 32'h55667788;
+        memWrite = 1;
+        #10;
+        memWrite = 0;
+        #10;
+        $display("Test case 3 - Address: %h, Write Data: %h, Read Data: %h", address, writeData, readData);
 
         $finish;
     end
 
-    always #10 clk = ~clk;
+    always #5 clk = ~clk;
 
 endmodule
