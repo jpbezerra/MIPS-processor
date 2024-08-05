@@ -131,8 +131,8 @@ module ALUControlUnit (
 );
     always @(*) begin
         case (ALUOp)
-            2'b00: ALUControl = 4'b0010; // ADD, LW, SW, ADDI, ADDIU
-            2'b01: ALUControl = 4'b0110; // SUB, BEQ
+            2'b00: ALUControl = 4'b0010;
+            2'b01: ALUControl = 4'b0110;
             2'b10: begin
                 case (Funct)
                     `ADDU: ALUControl = 4'b0010;
@@ -168,7 +168,7 @@ module ALU (
             4'b0110: Result = A - B;
             4'b0111: Result = (A < B) ? 1 : 0;
             4'b1100: Result = ~(A | B);
-            4'b0011: Result = B << 16; // LUI
+            4'b0011: Result = B << 16;
             default: Result = 0;
         endcase
     end
