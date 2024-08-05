@@ -3,7 +3,7 @@
 module ALUControlUnit_tb;
     reg [1:0] ALUOp;
     reg [5:0] Funct;
-
+    
     wire [3:0] ALUControl;
 
     ALUControlUnit uut (

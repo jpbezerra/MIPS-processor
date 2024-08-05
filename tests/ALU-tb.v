@@ -1,16 +1,13 @@
 `timescale 1ns / 1ps
 
 module ALU_tb;
-    // Inputs
     reg [31:0] A;
     reg [31:0] B;
     reg [3:0] ALUControl;
 
-    // Outputs
     wire [31:0] Result;
     wire Zero;
 
-    // Instantiate the Unit Under Test (UUT)
     ALU uut (
         .A(A), 
         .B(B), 

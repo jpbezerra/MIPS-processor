@@ -11,14 +11,14 @@ module ALUControlUnit (
                 case (Funct)
                     `ADDU: ALUControl = 4'b0010;
                     `SUB: ALUControl = 4'b0110;
-                    `JR: ALUControl = 4'b0000; // JR is a special case
+                    `JR: ALUControl = 4'b0000; // JR
                     default: ALUControl = 4'b0000;
                 endcase
             end
             2'b11: begin
                 case (Funct)
-                    `LUI: ALUControl = 4'b0011; // Custom code for LUI (shift left 16 bits)
-                    `ORI: ALUControl = 4'b0001; // Custom code for ORI
+                    `LUI: ALUControl = 4'b0011; // LUI 
+                    `ORI: ALUControl = 4'b0001; // ORI
                     default: ALUControl = 4'b0000;
                 endcase
             end

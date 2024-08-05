@@ -1,11 +1,8 @@
 `timescale 1ns / 1ps
 
 module ControlUnit_tb;
-
-    // Inputs
     reg [5:0] OpCode;
 
-    // Outputs
     wire RegDst;
     wire ALUSrc;
     wire MemToReg;
@@ -16,7 +13,6 @@ module ControlUnit_tb;
     wire Jump;
     wire [1:0] ALUOp;
 
-    // Instantiate the Unit Under Test (UUT)
     ControlUnit uut (
         .OpCode(OpCode), 
         .RegDst(RegDst), 

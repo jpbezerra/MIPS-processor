@@ -5,10 +5,8 @@ module DataMemory (
     input [31:0] writeData,
     output [31:0] readData
 );
-    // colocar 1023:0
     reg [31:0] memory [1023:0];
 
-    // ler de 4 em 4
     assign read_data = {memory[address], memory[address+1], memory[address+2], memory[address+3]};
 
     always @(posedge clk) begin

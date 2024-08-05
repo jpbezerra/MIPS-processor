@@ -1,17 +1,13 @@
 `timescale 1ns / 1ps
 
 module DataMemory_tb;
-
-    // Inputs
     reg clk;
     reg memWrite;
     reg [31:0] address;
     reg [31:0] writeData;
 
-    // Outputs
     wire [31:0] readData;
 
-    // Instantiate the Unit Under Test (UUT)
     DataMemory uut (
         .clk(clk),
         .memWrite(memWrite),

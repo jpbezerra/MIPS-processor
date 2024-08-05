@@ -5,7 +5,6 @@ module cpu_tb;
   reg reset;
   integer i;
 
-  // Instantiate the CPU
   CPU cpu (
     .clk(clk),
     .reset(reset)
@@ -15,11 +14,9 @@ module cpu_tb;
     $dumpfile("dump.vcd");
     $dumpvars();
     
-    // Initialize Inputs
     clk = 0;
     reset = 1;
 
-    // Wait 100 ns for global reset to finish
     #100;
     reset = 0;
 
@@ -371,17 +368,14 @@ module cpu_tb;
     cpu.im.memory[214] = 8'b00000000;
     cpu.im.memory[215] = 8'b00001100;
 
-    // Run simulation for a fixed number of cycles
     for (i = 0; i < 500; i = i + 1) begin
       #20; 
 
     end
 
-    // End the simulation
     $finish;
   end
 
-  // Generate clock
   always #10 clk = ~clk;
 
 endmodule
