@@ -1,14 +1,8 @@
-// max = 32d'220
-
 // Instruction R-type
 
 `define R_TYPE  6'b000000
 
 `define JUMP    6'b000010
-`define JR      6'b001000
-`define ADDU    6'b100001
-`define SUB     6'b100010
-`define SYSCALL 6'b001100
 
 // Instruction I-type
 
