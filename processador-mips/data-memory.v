@@ -18,10 +18,7 @@ module DataMemory (
             memory[address+2] <= writeData[15:8];
             memory[address+3] <= writeData[7:0];
 
-            $display("Valor: %d, posição: %d, memória: %b", writeData[31:24], address, memory[address]);
-            $display("Valor: %d, posição: %d, memória: %b", writeData[23:16], address+1, memory[address+1]);
-            $display("Valor: %d, posição: %d, memória: %b", writeData[15:8], address+2, memory[address+2]);
-            $display("Valor: %d, posição: %d, memória: %b", writeData[7:0], address+3, memory[address+3]);
+            $display("posição: %d, valor: %d", address, memory[address+3]);
         end
     end
 

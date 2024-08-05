@@ -138,14 +138,14 @@ module ALUControlUnit (
                 case (Funct)
                     `ADDU: ALUControl = 4'b0010;
                     `SUB: ALUControl = 4'b0110;
-                    `JR: ALUControl = 4'b0000; // JR is a special case
+                    `JR: ALUControl = 4'b0000;
                     default: ALUControl = 4'b0000;
                 endcase
             end
             2'b11: begin
                 case (Funct)
-                    `LUI: ALUControl = 4'b0011; // Custom code for LUI (shift left 16 bits)
-                    `ORI: ALUControl = 4'b0001; // Custom code for ORI
+                    `LUI: ALUControl = 4'b0011;
+                    `ORI: ALUControl = 4'b0001; 
                     default: ALUControl = 4'b0000;
                 endcase
             end
@@ -346,14 +346,11 @@ module InstructionMemory (
     input [31:0] address,
     output [31:0] instruction
 );
-    // testar mudar para [7:0] de [1023:0]
     reg [7:0] memory [1023:0];
 
-    // testar fazer a instrução assim
     assign instruction = {memory[address], memory[address + 1], memory[address + 2], memory[address + 3]};
 
 endmodule
-
 
 module MUX2to1 #(parameter WIDTH = 32) (
     input [WIDTH-1:0] in0,
